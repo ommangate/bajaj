@@ -12,16 +12,16 @@ public class App {
 
     public static void main(String[] args) {
         try {
-            // Step 1: Read and Parse the JSON File
+           
             File jsonFile = new File("input.json");
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode rootNode = objectMapper.readTree(jsonFile);
 
-            // Step 2: Traverse the JSON to Extract the Values
+            
             String firstName = rootNode.path("student").path("first_name").asText();
             String rollNumber = rootNode.path("student").path("roll_number").asText();
 
-            // Ensure that first name and roll number are in lowercase
+          
             firstName = firstName.toLowerCase();
             rollNumber = rollNumber.toLowerCase();
 
@@ -41,7 +41,7 @@ public class App {
         }
     }
 
-    // Helper method to generate MD5 hash
+  
     public static String generateMD5Hash(String input) throws NoSuchAlgorithmException {
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
         byte[] hashBytes = messageDigest.digest(input.getBytes());
